@@ -2,8 +2,13 @@ package br.com.caelum.tarefas.modelo;
 
 import java.util.Calendar;
 
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotBlank;
+
 public class Tarefa {
 	private Long id;
+	@NotBlank(message="Formulário sem conteúdo") @Size(min=5, message="Minimo 5 caracteres")
 	private String descricao;
 	private boolean finalizado;
 	private Calendar dataFinalizacao;
